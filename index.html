@@ -18,7 +18,7 @@
                 color: whitesmoke;
             }
             h2.center1 {
-                text-align: center;
+                text-align: justify;
                 font-size: 20px;
                 font-family: serif;
                 color: whitesmoke;
@@ -29,20 +29,67 @@
                 font-family: Arial, Helvetica, sans-serif;
                 color: black;
             }
+            body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/background1.png");
+  height: 80%;
+  width: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border: none;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  border: none;
+  display: contents;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+
+     
+            
+  
         
     
             
         </style>
     </head>
-    <body style="background-color:santiquewhite;">
-        <nav>
-            <a href="index.html">home</a>
-            <a href="index2.html">next page</a>
-            <a href="index3.html">next next page</a>
-        </nav>
-        <h1 class="center" style="background-color: rgb(83, 116, 161);">my first webpage</h1>
-        <h2 class="center1" style="background-color: rgb(83, 116, 161);">
-            <em>i will make this look as best as i can. Hopefully, i wont give up in a few days just because some minor issues.<br>~me 26/1/2024</em></h2>
+    <body style="background-color: white;">
+        <div class="hero-image">
+            <div class="hero-text">
+              <h1 style="font-size:100px">My first webpage</h1>
+              <p style="font-size: 50px;">by myself</p>
+              <p><em>This is my first webpage. I will make it look as good as possible. Hopefully i won't give up because of some minor issues.<br>~me 26/1/2024</em></p>
+             
+            </div>
+          </div>
+          
+            <style>
+                div.first {
+                    background: rgba(207, 207, 207, 0.6);
+                    border: none;
+                    background-size: 200px 400px;
+                    background-position: center;
+                    text-align: center;
+                }
+            </style>
+            <div class="first">
             <h3>why did i make this webpage?</h3>
             <p>
                 i first started making this webpage because i started learning html, css, and javascript and i wanna make 
@@ -51,6 +98,7 @@
                 If I am dedicated enough not to give up after a short time, this page will be used for a different, and 
                 more useful purpose, in which i havent thought of yet, but it will most likely be a webgame like "sandboxels"
             </p>
+            </div>
             <h2 class="center2">so first of all, lets start with your nickname</h2>
             <p>please enter your nickname below:</p>
             
@@ -91,44 +139,39 @@ style="width:400px;height:300px">
 
     }
 </style>
-<div>chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
+<div>
+    chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
     chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
     chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
     chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
     chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
 </div>
 <style>
-    a:link, a:visited{
-        background-color: rgb(89, 175, 156);
-        color: rgb(255, 255, 255);padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
+    .button1 {
+        padding: 10px 20px;
+        background-color: rgb(50, 62, 154);
+        color: white;
+        
 
     }
-    a:hover, a:active{
-        background-color: rgb(66, 126, 114);
+    .button1:hover {
+        background-color: rgb(16, 19, 71);
+        color:white
     }
 </style>
-<a href="https://www.youtube.com/watch?v=p7YXXieghto" target="_blank">button 1</a>
-<style>
-    a:link, a:visited{
-        background-color: rgb(82, 106, 176);
-        color: aliceblue;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-    a:hover, a:active{
-        background-color: rgb(31, 62, 99);
-    }
-</style>
-<a href="https://www.youtube.com/watch?v=BbeeuzU5Qc8">button 2</a>
+<button onclick="window.location.href='https://www.youtube.com/watch?v=oHg5SJYRHA0';" class="button1">button1</button>
+<button onclick="window.location.href='https://www.youtube.com/watch?v=QwLvrnlfdNo';" class="button1">button 2</button>
 
 
 <p><strong>YAY!!!!!!the images are displaying and now i know why they arent before</strong></p>
 <p>welp css is a powerful markup langauge</p>np
 <p>ok my laptop and chrome finally decide to cooperate with me.</p>
+
+<nav>
+    <a href="index.html">home</a>
+    <a href="index2.html">next page</a>
+    <a href="index3.html">next next page</a>
+</nav>
 
 
 
