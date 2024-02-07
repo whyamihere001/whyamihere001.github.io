@@ -17,17 +17,25 @@
                 font-family: Arial, Helvetica, sans-serif;
                 color: whitesmoke;
             }
-            h2.center1 {
-                text-align: justify;
-                font-size: 20px;
-                font-family: serif;
-                color: whitesmoke;
-            }
             h2.center2 {
                 text-align: left;
                 font-size: 30px;
                 font-family: Arial, Helvetica, sans-serif;
                 color: black;
+            }
+            h3.center3 {
+                text-align: center;
+                font-size: 31px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: rgb(44, 44, 44);
+                background-color: rgba(201, 201, 201, 0.5);
+            }
+            p.center4 {
+                text-align: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: rgb(44, 44, 44);
+                background-color: rgba(201, 201, 201, 0.5);
             }
             body, html {
   height: 100%;
@@ -44,6 +52,8 @@
   background-size: cover;
   position: relative;
   border: none;
+  margin: auto;
+  width: 100%;
 }
 
 .hero-text {
@@ -79,33 +89,97 @@
              
             </div>
           </div>
-          
-            <style>
-                div.first {
-                    background: rgba(207, 207, 207, 0.6);
-                    border: none;
-                    background-size: 200px 400px;
-                    background-position: center;
-                    text-align: center;
-                }
-            </style>
-            <div class="first">
+          <style>
+            .asdf{
+                background-color: rgb(207, 208, 223);
+                margin: auto;
+                border: none;
+                width: 100%;
+                -webkit-box-shadow: 0 0 10px #000000;
+                box-shadow: 0 0 10px #000000;
+
+            }
+          </style>
+          <div class="asdf">
+         
             <h3>why did i make this webpage?</h3>
-            <p>
-                i first started making this webpage because i started learning html, css, and javascript and i wanna make 
+            <p>i first started making this webpage because i started learning html, css, and javascript and i wanna make 
                 a mod for my favourite web game --sandboxels.
                 This page is for me "testing my skills", so it will be some sort of gibberish for now. 
                 If I am dedicated enough not to give up after a short time, this page will be used for a different, and 
-                more useful purpose, in which i havent thought of yet, but it will most likely be a webgame like "sandboxels"
-            </p>
-            </div>
-            <h2 class="center2">so first of all, lets start with your nickname</h2>
-            <p>please enter your nickname below:</p>
+                more useful purpose, in which i havent thought of yet, but it will most likely be a webgame like "sandboxels"</p>
+          </div>
+            <style>
+                .button2 {
+                    padding: 10px 20px;
+                    background-color: rgb(127, 36, 201);
+                    color: whitesmoke;
+                }
+                .button2:hover {
+                    background-color: rgb(50, 18, 81);
+
+                }
+            </style>
+            <button onclick="document.getElementById('Myimage').src='https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/lightbulb_on.png'" class="button2">turn on the light</button>
+            <img id="Myimage" src="https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/lightbulf_off.png" style="width: 300px;">
+            <button onclick="document.getElementById('Myimage').src='https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/lightbulf_off.png'" class="button2">turn off the light</button>
+            <h3>I am learning javascrpt</h3>
+            <p>This is a random number generator:</p>
+            <p id="rnd"></p>
+            <script> 
+            document.getElementById("rnd").innerHTML = Math.floor(Math.random()*10);
+            </script>
+            <script>
+            
+                const grid = [
+  ["M2", "M1", "M2"],
+  ["M1", "XX", "M1"],
+  ["M2", "M1", "M2"]
+];
+
+// Iterate through the rows
+for (let i = 0; i < grid.length; i++) {
+  const row = grid[i];
+
+  // Iterate through the columns in each row
+  for (let j = 0; j < row.length; j++) {
+    const cell = row[j];
+
+    // Do something with the cell value
+    console.log(`Cell at position (${i}, ${j}): ${cell}`);
+  }
+}
+            </script>
+            <script>
+                const name = "John";
+                const age = 20;
+                const alive = "true";
+                console.log("Name:", name, "Age:", age, "alive or not:", alive)
+                
+            </script>
+            <p>what even is a javascript.......</p>
+            <script>
+                for (var i = 1; i < 10; i++){
+                console.log("Iteration: " + i);
+}
+                
+
+            </script>
+            
+
+           
             
 <img src="https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/beautiful%20roblox%20moon.1.png"
 style="width:400px;height: 400px">
 <p>a nice view of moon in roblox</p>
 <p>i am learning html css and javascript</p>
+<h2>Heres the REAL numbeer generator:</h2>
+<button id="generateButton" class="button2s">Generate Random Number</button>
+  <p id="result"></p>
+
+
+<script src="script.js"></script>
+
 
 
 <img src="https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/3b7831ccefd136974ce42a83e093849df66b6c03/123.drawio.png"
