@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 style="text-align: center;">Here is a number guessing game:</h1>
+<style>
+    .qwert {
+        background-color: rgb(226, 226, 182);
+        text-align: center;
+        box-shadow: 0 0 10px;
+    }
+</style>
+<p class="qwert">
+    rules:<br>I will pick and number and you will need to guess it. The number is between 1 to 100.
+    In the process, I will give you comments such as "the number is too high" or "the number is too low" until you guessed it correctly. 
+    I will also count how many times you guessed until you get the right number.
+</p>
+<p style="size: 20px;">guess a number between 1 and 1000:</p>
+<style>
+    .button2 {
+        padding: 10px 20px;
+        background-color: rgb(127, 36, 201);
+        color: whitesmoke;
+    }
+    .button2:hover {
+        background-color: rgb(50, 18, 81);
+
+    }
+</style>
+
+
+<label for="inputField">Enter your guess</label>
+<input type="number" id="inputField" />
+<button onclick="handleInput()" class="button2">Submit</button>
+<p id="comments"></p>
+
+<script>
+    const qwe = Math.floor(Math.random() * 1000) + 1;
+    console.log("random number: " + qwe);
+ function handleInput() {
+  var userInput = document.getElementById("inputField").value;
+  console.log("User input: " + userInput);
+if (qwe > userInput) {
+    document.getElementById("comments").innerHTML = "this number is too low";
+} else if (qwe < userInput) {
+    document.getElementById("comments").innerHTML = "this number is too high";
+} else {
+    document.getElementById("comments").innerHTML = "you guessed it correctly!!!";
+}
+ }
+ 
+
+  
+  
+
+    
+</script>
+
+
+
+
+
+
+<nav style="padding: 20px;">
+    <a href="index.html" class="button2">home</a>
+    <a href="index2.html" class="button2">page 2 (you are here)</a>
+    <a href="index3.html" class="button2">page 3</a>
+</nav>
+</body>
+</html>
+
+

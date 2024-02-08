@@ -84,7 +84,7 @@
         <div class="hero-image">
             <div class="hero-text">
               <h1 style="font-size:100px">My first webpage</h1>
-              <p style="font-size: 50px;">by myself</p>
+              <p style="font-size: 50px;">by myself<br>go to page 2 if you wanna play the number guessing game</p>
               <p><em>This is my first webpage. I will make it look as good as possible. Hopefully i won't give up because of some minor issues.<br>~me 26/1/2024</em></p>
              
             </div>
@@ -121,7 +121,7 @@
                 }
             </style>
             <button onclick="document.getElementById('Myimage').src='https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/lightbulb_on.png'" class="button2">turn on the light</button>
-            <img id="Myimage" src="https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/lightbulf_off.png" style="width: 300px;">
+            <img id="Myimage" src="https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/lightbulf_off.png" style="width: 300px; margin-top: 20px;">
             <button onclick="document.getElementById('Myimage').src='https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/lightbulf_off.png'" class="button2">turn off the light</button>
             <h3>I am learning javascrpt</h3>
             <p>This is a random number generator:</p>
@@ -213,13 +213,20 @@ style="width:400px;height:300px">
 
     }
 </style>
-<div>
-    chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
-    chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
-    chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
-    chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
-    chipi chipi chapa chapa lubi lubi daba daba magico mi luvi luvi boom boom boom boom<br>
+<div id="myDiv">
+    chipi chipi chapa chapa lubi lubi daba daba magico mi lubi lubi boom boom boom boom<br>
+    chipi chipi chapa chapa lubi lubi daba daba magico mi lubi lubi boom boom boom boom<br>
+    chipi chipi chapa chapa lubi lubi daba daba magico mi lubi lubi boom boom boom boom<br>
+    chipi chipi chapa chapa lubi lubi daba daba magico mi lubi lubi boom boom boom boom<br>
+    chipi chipi chapa chapa lubi lubi daba daba magico mi lubi lubi boom boom boom boom<br>
 </div>
+<script>
+    function asd(){
+    var myDiv = document.getElementById("myDiv");
+myDiv.innerHTML = "never gonna give you up<br>never gonna let you down<br>never gonna run around and desert you";
+    }
+</script>
+<button onclick="asd()" class="button1">DONT click</button>
 <style>
     .button1 {
         padding: 10px 20px;
@@ -241,10 +248,11 @@ style="width:400px;height:300px">
 <p>welp css is a powerful markup langauge</p>np
 <p>ok my laptop and chrome finally decide to cooperate with me.</p>
 
+
 <nav>
-    <a href="index.html">home</a>
-    <a href="index2.html">next page</a>
-    <a href="index3.html">next next page</a>
+    <a href="index.html" class="button2">home (you are here)</a>
+    <a href="index2.html" class="button2">page 2</a>
+    <a href="index3.html" class="button2">page 3</a>
 </nav>
 
 
