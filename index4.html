@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <title>memory game--test your memories</title>
+    <body>
+        <h1>fruit matching memory game</h1>
+        <style>
+            .qwert1 {
+                background-color: rgb(226, 226, 182);
+                text-align: left;
+                box-shadow: 0 0 10px;
+                width: 50%;
+                top: 50%;
+                left: 50%;
+            }
+        </style>
+        <style>
+            .button2 {
+                padding: 10px 20px;
+                background-color: rgb(127, 36, 201);
+                color: whitesmoke;
+            }
+            .button2:hover {
+                background-color: rgb(50, 18, 81);
+        
+            }
+        </style>
+        
+        <div class="qwert1">
+        <p>
+            rules:<br>
+            1. click on the cards to reveal their faces, it will remain face up until you click on anothr card<br>
+            2. memorize the image<br>
+            3. click on another card to reveal their face<br>
+            4. if opened cards match, i will keep them face up. If not, both of the cards will become face down again<br>
+            5. continue the game until all the cards are matched<br>
+            6. once all of them are matched, you win. Good luck
+
+        </p>
+        </div>
+        <style>
+          .image-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 100px); /* Adjust the number of columns as needed */
+            grid-gap: 10px;
+            
+            justify-content: center;
+            align-items: center;
+         /* Adjust the gap between images as needed */
+          }
+          .images {
+            width: 100%;
+            height: auto;
+          }
+          </style>
+       <style>
+        .images {
+          width: 150px; /* Set the desired width */
+          height: auto; /* Let the height adjust proportionally */
+        }
+      </style>
+      
+      <div id="image-grid"></div>
+      
+      <script>
+        var imageUrl = "https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/asdfasdfasdfasdf.png";
+        var imageGrid = document.getElementById("image-grid");
+      
+        for (var i = 0; i < 24; i++) {
+          var imageElement = document.createElement("img");
+          imageElement.setAttribute("src", imageUrl);
+          imageElement.setAttribute("alt", "???");
+          imageElement.setAttribute("class", "images");
+          imageElement.setAttribute("id", "image-" + i);
+      
+          imageGrid.appendChild(imageElement);
+        }
+      </script>
+          <script>     
+          
+          
+    
+ 
+           // Define an array of the 6 random image URLs
+           document.addEventListener("DOMContentLoaded", function() {
+  var randomImageUrls = [
+    "https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/%E6%9C%AA%E5%91%BD%E5%90%8D%E8%A8%AD%E8%A8%88%20(2).png",
+    "https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/%E6%9C%AA%E5%91%BD%E5%90%8D%E8%A8%AD%E8%A8%88%20(3).png",
+    "https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/%E6%9C%AA%E5%91%BD%E5%90%8D%E8%A8%AD%E8%A8%88%20(6).png",
+    "https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/%E6%9C%AA%E5%91%BD%E5%90%8D%E8%A8%AD%E8%A8%88%20(5).png",
+    "https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/%E6%9C%AA%E5%91%BD%E5%90%8D%E8%A8%AD%E8%A8%88%20(8).png",
+    "https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/watermelon.png"
+  ];
+  var imageGrid = document.getElementById("image-grid");
+  var images = imageGrid.getElementsByTagName("img");
+
+  var openCards = [];
+  var matchedCards = [];
+
+  var remainingMatches = randomImageUrls.length; // Number of remaining matches to find
+
+  // Shuffle the random image URLs
+  shuffle(randomImageUrls);
+
+  // Assign random images to the images in the grid
+  for (var i = 0; i < images.length; i++) {
+    var randomImageUrl = randomImageUrls[i % randomImageUrls.length];
+    images[i].addEventListener("click", handleImageClick);
+    images[i].setAttribute("data-random-image", randomImageUrl);
+  }
+
+  function handleImageClick() {
+    if (openCards.length < 2 && !matchedCards.includes(this)) {
+      // Flip the clicked image
+      this.src = this.getAttribute("data-random-image");
+
+      // Add the clicked image to the open cards
+      openCards.push(this);
+
+      if (openCards.length === 2) {
+        // Check if the open cards match
+        if (openCards[0].src === openCards[1].src) {
+          // Match found
+          matchedCards.push(...openCards);
+          remainingMatches--;
+
+          if (remainingMatches === 0) {
+          document.getElementById("gameover").innerHTML = "yay!!! you won!!"
+            
+          }
+        } else {
+          // No match, flip back the open cards after a delay
+          setTimeout(function() {
+            openCards[0].src = "https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/asdfasdfasdfasdf.png";
+            openCards[1].src = "https://raw.githubusercontent.com/whyamihere001/whyamihere001.github.io/main/asdfasdfasdfasdf.png";
+          }, 1000);
+        }
+
+        // Clear the open cards array
+        openCards = [];
+      }
+    }
+  }
+
+  // Fisher-Yates shuffle algorithm
+  function shuffle(array) {
+    var currentIndex = array.length;
+    var temporaryValue, randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+});
+  
+ 
+  </script>
+  <p id="gameover"></p>
+     
+
+        <nav style="padding: 20px;">
+            <a href="index.html" class="button2">home</a>
+            <a href="index2.html" class="button2">page 2</a>
+            <a href="index3.html" class="button2">page 3 (you are here)</a>
+        </nav>
+        </body>
+        </html>
+        
+    </body>
+</html>
