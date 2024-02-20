@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <title>harder difficulty</title>
+    <body>
+        <p>this time, the number will be between 1 and 10000, good luck...</p>
+        <script>
+            const qwe1 = Math.floor(Math.random() * 10000) + 1;
+            console.log("random number: " + qwe);
+         function handleInput() {
+          var userInput = document.getElementById("inputField").value;
+          console.log("User input: " + userInput);
+        if (qwe1 > userInput) {
+            document.getElementById("comments").innerHTML = "this number is too low";
+        } else if (qwe1 < userInput) {
+            document.getElementById("comments").innerHTML = "this number is too high";
+        } else {
+            document.getElementById("comments").innerHTML = "you guessed it correctly!!!";
+        }
+         }
+         
+         
+        
+          
+          
+        
+            
+        </script>
+        
+    </body>
+</html>
