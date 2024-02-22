@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dice</title>
+    </head>
+    <p>heres 3 dice</p>
+    <div class="container">
+        <div class="square" id="square1"></div>
+        <div class="square" id="square2"></div>
+        <div class="square" id="square3"></div>
+      </div>
+      <div class="button">
+        <button id="myButton" style="width: 300px; height: 100px; display: block; background-color: rgb(93, 202, 184); ">ROLL</button>
+      </div>
+      <div class="sum" id="sumofdice"></div>
+      <script>
+        
+var button = document.getElementById("myButton"); 
+button.addEventListener("click", function() {
+    var square1 = document.getElementById("square1");
+square1.innerText = "???";
+
+var square2 = document.getElementById("square2");
+square2.innerText = "???";
+
+var square3 = document.getElementById("square3");
+square3.innerText = "???";
+
+
+
+        var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+var randomNumber3 = Math.floor(Math.random() * 6) + 1;
+
+console.log(randomNumber1);
+console.log(randomNumber2);
+console.log(randomNumber3);
+    
+    
+        
+    document.getElementById("square1").innerText = randomNumber1;
+    document.getElementById("square2").innerText = randomNumber2;
+    document.getElementById("square3").innerText = randomNumber3;
+
+    document.getElementById("sumofdice").innerHTML = "the sum of the dice is " + (randomNumber1 + randomNumber2 + randomNumber3);
+    
+
+  
+  console.log("Button clicked!");
+});
+
+
+      </script>
+      <style>
+        .container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(123, 172, 207);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+.button {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    
+ 
+}
+.sum {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 60px;
+    background-color: antiquewhite;
+}
+      </style>
+</html>
