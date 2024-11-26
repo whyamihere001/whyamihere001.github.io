@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Full-width Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #e0e5ec;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .slide.active .slide-content {
+            bottom: 25%;
+            opacity: 1;
+        }
+
+        .slide-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: white;
+            transform: scale(1.3);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .arrow:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .arrow-left {
+            left: 20px;
+        }
+
+        .arrow-right {
+            right: 20px;
+        }
+
+        .arrow::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-top: 3px solid white;
+            border-right: 3px solid white;
+            position: absolute;
+        }
+
+        .arrow-left::before {
+            transform: rotate(-135deg);
+            margin-left: 5px;
+        }
+
+        .arrow-right::before {
+            transform: rotate(45deg);
+            margin-right: 5px;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            width: 100%;
+        }
+
+        .progress {
+            height: 100%;
+            background: white;
+            width: 0;
+            transition: width 0.1s linear;
+        }
+
+        @media (max-width: 768px) {
+            .slide-content h2 {
+                font-size: 2rem;
+            }
+
+            .slide-content p {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+            .arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slide active">
+            <img src="https://picsum.photos/1920/1080?random=1" alt="Nature Scene 1">
+            <div class="slide-content">
+                <h2>Beautiful Landscapes</h2>
+                <p>Discover the beauty of nature through our stunning collection</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/1920/1080?random=2" alt="Nature Scene 2">
+            <div class="slide-content">
+                <h2>Urban Adventures</h2>
+                <p>Experience the excitement of city life and modern architecture</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/1920/1080?random=3" alt="Nature Scene 3">
+            <div class="slide-content">
+                <h2>Mountain Peaks</h2>
+                <p>Reach new heights with breathtaking mountain views</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/1920/1080?random=4" alt="Nature Scene 4">
+            <div class="slide-content">
+                <h2>Ocean Wonders</h2>
+                <p>Dive into the mesmerizing world of marine life</p>
+            </div>
+        </div>
+
+        <div class="arrow arrow-left"></div>
+        <div class="arrow arrow-right"></div>
+        <div class="navigation"></div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const navDots = document.querySelector('.navigation');
+            const arrowLeft = document.querySelector('.arrow-left');
+            const arrowRight = document.querySelector('.arrow-right');
+            const progressBar = document.querySelector('.progress');
+            
+            let currentSlide = 0;
+            let interval;
+            const intervalTime = 5000;
+            let progressWidth = 0;
+            let progressInterval;
+
+            // Create navigation dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('nav-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                navDots.appendChild(dot);
+            });
+
+            function updateProgress() {
+                progressWidth = 0;
+                clearInterval(progressInterval);
+                progressInterval = setInterval(() => {
+                    progressWidth += 100 / (intervalTime / 100);
+                    progressBar.style.width = `${progressWidth}%`;
+                    if (progressWidth >= 100) {
+                        progressWidth = 0;
+                    }
+                }, 100);
+            }
+
+            function goToSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                document.querySelectorAll('.nav-dot')[currentSlide].classList.remove('active');
+                
+                currentSlide = index;
+                if (currentSlide >= slides.length) currentSlide = 0;
+                if (currentSlide < 0) currentSlide = slides.length - 1;
+                
+                slides[currentSlide].classList.add('active');
+                document.querySelectorAll('.nav-dot')[currentSlide].classList.add('active');
+                updateProgress();
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            // Event listeners
+            arrowRight.addEventListener('click', nextSlide);
+            arrowLeft.addEventListener('click', prevSlide);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+
+            // Touch events for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) nextSlide();
+                if (touchStartX - touchEndX < -50) prevSlide();
+            });
+
+            // Start automatic slideshow
+            function startSlideshow() {
+                interval = setInterval(nextSlide, intervalTime);
+                updateProgress();
+            }
+
+            function stopSlideshow() {
+                clearInterval(interval);
+                clearInterval(progressInterval);
+                progressBar.style.width = '0%';
+            }
+
+            // Pause on hover
+            document.querySelector('.slider-container').addEventListener('mouseenter', stopSlideshow);
+            document.querySelector('.slider-container').addEventListener('mouseleave', startSlideshow);
+
+            // Initial start
+            startSlideshow();
+        });
+    </script>
+</body>
+</html>
