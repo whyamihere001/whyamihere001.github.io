@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stupid hw webpage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Arial', sans-serif;
+            }
+            .header-basic{
+                background-color:beige;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                width: 100%;
+                height: 125px;
+                padding: 25px;    
+                top: 0;
+                z-index: 1000;
+                position: fixed;
+
+            }
+
+            .header-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                align-self: center;
+                text-align: center;
+                position:fixed;
+            }
+
+            .logo-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .logo-link {
+                display: block;
+                transition: transform 0.3s ease;
+            }
+
+            .logo-link:hover {
+                transform: scale(1.05);
+            }
+
+            .logo-image {
+                object-fit: contain;
+            }
+
+            .nav-container {
+                display:flex;
+                align-items: center;
+
+            }
+
+            .nav-link{
+                display: block;
+                transition: transform 0.3s ease;
+
+            }
+
+            .nav-link:hover{
+                transform: scale(1.05);
+            }
+
+            .nav-image{
+                object-fit: center;
+            }
+
+            .hero {
+                height: 100vh;
+                width: 100%;
+                position: relative;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                            url('https://d2dfteklrodxua.cloudfront.net/wp-content/uploads/2022/08/10142945/Group-2.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .hero-content {
+                text-align: center;
+                color: #ffffff;
+                padding: 20px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .hero-title {
+                font-size: 4rem;
+                margin-bottom: 20px;
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeInUp 0.8s ease forwards;
+                color:antiquewhite;
+            }
+
+            .hero-h2 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+                color: antiquewhite;
+                transform: translateY(30px);
+                animation: fadeInUp 0.8s ease forwards;
+            }
+
+            /*yes i copied from google i just want an animation but appearently it needed this part to work*/
+                @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+        </style>
+        
+            <header class="header-basic">
+                <div class="header-content">
+                    <div class="logo-container">
+                        <a href="https://www.tlgc.edu.hk/" class="logo-link" target="_blank">
+                            <img id="True Light Logo" src="http://d2dfteklrodxua.cloudfront.net/wp-content/uploads/2022/08/05073740/TLGC_Logo_Header.svg" alt="true light logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-container">
+                    
+                </div>
+            </header>
+            <section class="hero">
+                <h1 class="hero-title">
+                    <p>
+                        TLGC 50<sup>th</sup>anniversary
+                    </p>
+                </h1>
+                <h2 class="hero-h2">
+                    <P>
+                        activities
+                    </P>
+                </h2>
+
+            </section>
+            <p>tlgc</p>
+       
+    </body>
+</html>
