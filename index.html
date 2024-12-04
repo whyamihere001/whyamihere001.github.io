@@ -98,7 +98,6 @@
                 padding: 20px;
                 position: relative;
                 z-index: 1;
-                fomt-size: 125px;
             }
 
             .hero-title {
@@ -110,6 +109,13 @@
                 color:antiquewhite;
             }
 
+            .hero-h2 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+                color: antiquewhite;
+                transform: translateY(30px);
+                animation: fadeInUp 0.8s ease forwards;
+            }
 
             /*yes i copied from google i just want an animation but appearently it needed this part to work*/
                 @keyframes fadeInUp {
@@ -118,11 +124,6 @@
                     transform: translateY(0);
                 }
             }
-
-            .event-header {
-                colour: #0000cc;
-                maargin: 20px;
-                
 
         </style>
         
@@ -144,6 +145,11 @@
                         TLGC 50<sup>th</sup>anniversary
                     </p>
                 </h1>
+                <h2 class="hero-h2">
+                    <P>
+                        activities
+                    </P>
+                </h2>
 
             </section>
             <p>tlgc</p>
