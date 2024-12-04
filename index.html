@@ -1,14 +1,26 @@
+
 <!DOCTYPE html>
+<!--I am Ho Chiu Yee 5B 9-->
+<!--This thing took me a long time to finish-->
+<!--the hardest part is thinking of how to implement an ordered list and unordered list-->
+<!--No the code isnt entirely by myself, tho most of it is from me, I really had to search up something on google-->
+<!--e.g."text animation in webpage", "style a table using css"-->
+<!--i garantee you wont read through all my code, ride? Thats why I placed all the comments on the top-->
+<!--DO YOU KNOW THE PAIN OF TRIAL AND ERROR??-->
+<!--I tried for more than a few times for all of this to work-->
+<!--p.s. there are no image files because the images are all stored in the school web server (?) Anyways, you can access them from the internet-->
+<!---->
 <html>
     <head>
-        <title>stupid hw webpage</title>
+
+        <title>TLGC 50 year anniversary</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
     
     <body>
-        <style>
+        <style>        
             * {
                 margin: 0;
                 padding: 0;
@@ -109,13 +121,65 @@
                 color:antiquewhite;
             }
 
-            .hero-h2 {
-                font-size: 3rem;
-                margin-bottom: 20px;
-                color: antiquewhite;
-                transform: translateY(30px);
-                animation: fadeInUp 0.8s ease forwards;
+
+
+            .container {
+                display: flex; 
+                align-items: center; 
+                justify-content: center;
+                padding:10px;
             }
+            .para-header {
+                padding: 10px;
+                font-size: larger;
+                text-align: left;
+                color: #090f6b;
+            }
+            .text {
+                padding: 10px;
+                max-width: 600px;
+                min-width: 600px;
+                background-color: white; 
+                border-radius: 8px; 
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                font-size: large;
+                
+            }
+            .image {
+                width: 300px; 
+                height: auto; 
+                margin-left: 20px; 
+                padding: 10px;
+            }
+            /*I googled how to style a table*/
+            .image1 {
+                width: 150px;
+                height: auto;
+                margin-left: 20px;
+            }
+            table {
+                width: 580px;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th, td {
+                border: 1px solid #ddd; 
+                padding: 10px;
+                text-align: left;
+                max-width: 300px;
+            }
+            th {
+                background-color: #f2f2f2;
+                max-width: 300px;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9; 
+            }
+            .list {
+                text-align: left;
+                padding-left:20px;
+            }
+            
 
             /*yes i copied from google i just want an animation but appearently it needed this part to work*/
                 @keyframes fadeInUp {
@@ -140,19 +204,150 @@
                 </div>
             </header>
             <section class="hero">
-                <h1 class="hero-title">
+                <h2 class="hero-title">
                     <p>
                         TLGC 50<sup>th</sup>anniversary
                     </p>
-                </h1>
-                <h2 class="hero-h2">
-                    <P>
-                        activities
-                    </P>
                 </h2>
-
             </section>
-            <p>tlgc</p>
-       
+            <div class="container">
+                <div class="text">
+                    <h4 class="para-header">
+                        50 year anniversary logo
+                    </h4>
+                    <hr>
+                    <p>
+                        This logo was designed by a student of our school back in June 2022, where it won the champion of the logo design competition.
+                    </p>
+                </div>
+                <img src="https://d2dfteklrodxua.cloudfront.net/wp-content/uploads/2022/08/27044358/Homepage-50th-Anniversary-photo.png" alt="50 year anniversary logo" class="image">
+            </div>
+            <div class="container">
+                <div class="text">
+                    <h4 class="para-header">
+                        50 year Walkathon
+                    </h4>
+                    <hr>
+                    <p>so many fun activities include:</p>
+                    <ul class="list">
+                    
+                        <li>choir singing</li>
+                        <li>A Capella performance</li>
+                        <li>Mongolian and Hungarian dances</li>
+                    
+                    </ul>
+
+                </div>
+                <img src="https://d2dfteklrodxua.cloudfront.net/wp-content/uploads/2022/11/18120346/IMG_0185-e1695009851135.jpg" alt="walkathon" class="image">
+                </div>
+                <div class="container">
+                    <div class="text">
+                        <h4 class="para-header">
+                            2022-2023 Life-wide Learning Day
+                        </h4>
+                        <hr>
+                        <p>
+                            The “2022-2023 Life-wide Learning Day” was held at Hong Kong Disneyland on 18 November 2022. The Day offered experiential learning programme for our students to understand Disney’s corporate culture and work environment. Through the programme, students would be able to appreciate the importance of a positive work attitude and life skills, which facilitated their future career development.
+                        </p>
+                    </div>
+                    <img src="https://d2dfteklrodxua.cloudfront.net/wp-content/uploads/2022/11/24095505/DSC4351-1024x683.jpg" alt="life wide learning day" class="image">
+                </div>
+                <div class="container">
+                    <div class="text">
+                        <h4 class="para-header">
+                            50 year school open day
+                        </h4>
+                        <hr>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>date</th>
+                                    <th>time</th>
+    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>17<sup>th</sup>feb 2022</td>
+                                    <td>From 2 p.m. to 5 p.m.</td>
+                                </tr>
+                                <tr>
+                                    <td>18 February 2023 (Saturday)</td>
+                                    <td>From 10 a.m. to 5 p.m.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>activities</th>
+                                    <th>time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gamebooth</td>
+                                    <td>all day</td>
+                                </tr>
+                                <tr>
+                                    <td>exhibition</td>
+                                    <td>all day</td>
+                                </tr>
+                                <tr>
+                                    <td>performaces</td>
+                                    <td>	17 February 2023 (3 p.m.)<br>
+                                        18 February 2023 (11:00 a.m. and 2 p.m.)</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Half a Century in a Glimpse – Chatting about TLGC with our former Vice Principal Mr. Fong Wing Sum</td>
+                                    <td>18 February 2023 (2 p.m.)</td>
+                                </tr>
+                                <tr>
+                                    <td>Invitation Competition</td>
+                                    <td>18 February 2023 (3 p.m.)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <img src="https://d2dfteklrodxua.cloudfront.net/wp-content/uploads/2023/01/26092847/open-day-poster-A4.jpg" alt="50 year opening day" class="image">
+                    </div>
+                    
+                    <div class="container">
+                        <div class="text">
+                            <h4 class="para-header">
+                                Thanks giving service
+                            </h4>
+                            <hr>
+                            <p>
+                                The “True Light Girls' College 50th Anniversary Thanksgiving Service cum True Light Minihall and Future Classroom Opening Ceremony” was held on 5th May 2023. The service commenced with the sermon from Rev. Wong Ka Fai. It was followed by the unveiling of Time Capsule, which stored up many blessing items from our teachers and students in the 40th Anniversary Thanksgiving Service in 2013.
+                            </p>
+                        </div>
+                        <img src="https://d2dfteklrodxua.cloudfront.net/wp-content/uploads/2023/05/11145123/IMG_3271-700x450.jpg" alt="50 year anniversary logo" class="image">
+                    </div>
+                    <div class="container">
+                        <div class="text">
+                            <h4 class="para-header">
+                                50<sup>th</sup>year variety show
+                            </h4>
+                            <hr>
+                            <p>
+                                The 50th Anniversary Variety Show was held at Xiqu Centre on 29th June 2023. Performace include:
+                            </p>
+                            <ol class="list">
+                                <li>School Orchestra</li>
+                                <li>Old Girls' Choir</li>
+                                <li>Chinese Orchestra</li>
+                                <li>Cantonese Opera</li>
+                                <li>Hungarian Dance</li>
+
+                            </ol>
+                        </div>
+                        <img src="https://d2dfteklrodxua.cloudfront.net/wp-content/uploads/2023/07/10100552/WhatsApp-Image-2023-07-10-at-10.02.02.jpeg" alt="50 year anniversary logo" class="image">
+                    </div>
+                    <script>
+                        console.log("what the hell is a 'spendid array'...")
+                    </script>
     </body>
 </html>
+<!--finally done.-->
